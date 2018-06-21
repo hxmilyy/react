@@ -18,7 +18,8 @@ class Address extends Component{
     return (
       <div>
         {/* <button onClick={() => {return {type: 'ADDRESS_GET_ALL'}}}>获取地址列表</button> */}
-        <Test onGetAllAddress={() => {getAll()} }></Test>
+        {/* <Test onGetAllAddress={() => {getAll()} }></Test> */}
+        address
       </div>
     );
   }
@@ -33,7 +34,7 @@ Address.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  list: state.list
+  list: state.address
 })
 
 // const mapDispatchToProps = dispatch => ({

@@ -26,7 +26,7 @@ Counter.propTypes = {
  * connect方法可以省略mapStateToProps参数，那样的话，UI 组件就不会订阅Store，就是说 Store 的更新不会引起 UI 组件的更新。
  */
 const mapStateToProps = state => ({
-  count: state.getIn(['count']),
+  count: state.count,
 })
 
 /**
