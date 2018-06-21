@@ -1,0 +1,42 @@
+{
+  "name": "react_minimal",
+  "version": "1.0.0",
+  "description": "An example with react react-router redux redux-saga",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "webpack --mode production && NODE_ENV=production node server.js"
+  },
+  "author": "mapengcheng3",
+  "license": "MIT",
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "babel-core": "^6.20.0",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "fetch-jsonp": "^1.1.3",
+    "history": "^4.7.2",
+    "html-webpack-plugin": "^3.2.0",
+    "prop-types": "^15.6.2",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-hot-loader": "^3.0.0-beta",
+    "react-loadable": "^5.4.0",
+    "react-redux": "^4.4.9",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^3.7.2",
+    "redux-saga": "^1.0.0-beta.1",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-middleware": "^3.1.3",
+    "webpack-hot-middleware": "^2.15.0",
+    "webpack-manifest-plugin": "^2.0.3"
+  },
+  "dependencies": {}
+}
