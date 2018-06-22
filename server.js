@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
+const compression = require('compression')
 const express = require('express')
 const config = require('./webpack.config')
 
@@ -9,6 +10,7 @@ const isDeveloping = process.env.NODE_ENV !== 'production';
 const port = 3000;
 
 const app = express()
+app.use(compression())
 
 // console.log(`process.env = ${JSON.stringify(process.env)}`);
 console.log('\x1b[31m%s\x1b[0m', `running in ${isDeveloping?'develop':'production'} mode`);

@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import {connect} from 'react-redux'
-import {Test} from './Test'
+// import {Test} from './Test'
 import {getAll} from '../actions/address'
+import '../less/address.less'
 
 class Address extends Component{
   constructor(props) {
@@ -17,9 +18,7 @@ class Address extends Component{
 
     return (
       <div>
-        {/* <button onClick={() => {return {type: 'ADDRESS_GET_ALL'}}}>获取地址列表</button> */}
-        {/* <Test onGetAllAddress={() => {getAll()} }></Test> */}
-        address
+        <div className="address">address</div>
       </div>
     );
   }

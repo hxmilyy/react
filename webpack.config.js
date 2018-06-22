@@ -29,7 +29,7 @@ module.exports = {
   },
   output: {
     // filename: '[name].js',
-    filename: '[name].[hash].bundle.js',
+    filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: 'http://localhost:3000/',
   },
@@ -39,6 +39,16 @@ module.exports = {
         test: /\.jsx?/,
         // Don't use .babelrc in `yarn link`-ed dependency's directory and use in current direction instead
         loader: 'babel-loader?babelrc=false&extends=' + path.resolve(__dirname, '.babelrc')
+      },
+      {
+        test: /\.less$/,
+        use: [{
+          loader: 'style-loader' // creates style nodes from JS strings
+        }, {
+          loader: 'css-loader' // translates CSS into CommonJS
+        }, {
+          loader: 'less-loader' // compiles Less to CSS
+        }]
       }
     ],
   },
@@ -53,7 +63,7 @@ module.exports = {
       // hash: true
     }),
     new ExtractTextPlugin({
-      filename: '[name].[hash].bundle.css',
+      filename: '[name].[hash].css',
     }),
     new ManifestPlugin(),
     new webpack.NamedModulesPlugin()
