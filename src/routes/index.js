@@ -2,8 +2,9 @@ import React from 'react'
 import Loadable from 'react-loadable';
 import { Router, Route, Switch } from 'react-router'
 import Home from '../components/Home'
-import NavBar from '../components/NavBar'
 import Loading from '../components/Loading';
+import NavBar from '../components/NavBar'
+
 // import Hello from '../components/Address'
 // import Counter from '../components/Counter'
 // import NoMatch from '../components/NoMatch'
@@ -15,7 +16,7 @@ const routes = (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/hello" component={Loadable({
-        loader: () => import('../components/Address'),
+        loader: () => import('../components/Hello'),
         loading: Loading,
       })} />
       <Route path="/counter" component={Loadable({

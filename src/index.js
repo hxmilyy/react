@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import createSagaMiddleware from 'redux-saga'
 import { AppContainer } from 'react-hot-loader'
-import { applyMiddleware, compose, createStore } from 'redux'
 import { createHashHistory } from 'history'
+import { applyMiddleware, compose, createStore } from 'redux'
+import { connectRouter, routerMiddleware, ConnectedRouter } from 'connected-react-router'
 // import { routerMiddleware, connectRouter } from 'connected-react-router/immutable'
 // import Immutable from 'immutable'
 import saga from './sagas'
@@ -16,11 +17,11 @@ const sagaMiddleware = createSagaMiddleware()
 const initialState = {}
 // const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(
-  rootReducer,
+  connectRouter(history)(rootReducer),
   initialState,
   compose(
     applyMiddleware(
-      /* routerMiddleware(history), */sagaMiddleware
+      routerMiddleware(history),sagaMiddleware
     ),
   ),
 )
@@ -30,7 +31,9 @@ const render = () => {
   ReactDOM.render(
     <AppContainer>
       <Provider store={store}>
-        <App history={history} />
+        <ConnectedRouter history={history}>
+          <App history={history} />
+        </ConnectedRouter>
       </Provider>
     </AppContainer>,
     document.getElementById('react-root')
